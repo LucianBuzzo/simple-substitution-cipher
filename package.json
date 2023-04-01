@@ -1,5 +1,5 @@
 {
-  "name": "simple-substituion-cipher",
+  "name": "simple-substitution-cipher",
   "version": "1.0.0",
   "description": "",
   "main": "dist/index.js",
