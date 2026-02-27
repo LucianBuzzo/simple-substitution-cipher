@@ -9,8 +9,8 @@ git clone git@github.com:LucianBuzzo/simple-substitution-cipher.git
 npm i
 ```
 
-Then you can run the code with:
+Then you can run the test suite with:
 
 ```bash
-npx jest
+npm test
 ```
