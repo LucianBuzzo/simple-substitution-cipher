@@ -20,6 +20,12 @@ describe("Simple Substitution Cipher", () => {
     expect(decipher("nbpph", key)).toBe("hello");
   });
 
+  it("should ignore non-alphabetic characters during processing", () => {
+    const key = "aardvark";
+    expect(encipher("hello! 123", key)).toBe("nbpph");
+    expect(decipher("nbpph! 123", key)).toBe("hello");
+  });
+
   it("encode then decode should result in the same value", () => {
     const key = "aardvark";
     expect(decipher(encipher("hello", key), key)).toBe("hello");

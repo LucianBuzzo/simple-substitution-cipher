@@ -83,6 +83,7 @@ export const processText = (
     .toLowerCase()
     .split("")
     .map((char) => lookupTable[char])
+    .filter((char): char is string => Boolean(char))
     .join("");
 };
 
