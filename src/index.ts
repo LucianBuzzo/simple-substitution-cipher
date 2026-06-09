@@ -137,7 +137,7 @@ export const crack = (cipherText: string) => {
   let bestAlphabet = ALPHABET.split("").sort(() => Math.random() - 0.5).join("");
 
   // Decrypt the text using the initial alphabet and calculate its quadgram score
-  let bestText = processText(cleanedCipherText, ALPHABET, bestAlphabet);
+  let bestText = processText(cleanedCipherText, bestAlphabet, ALPHABET);
   let bestScore = quadgramScore(bestText);
 
   // Iterate through the hill-climbing algorithm
@@ -150,7 +150,7 @@ export const crack = (cipherText: string) => {
     const newAlphabet = swapPositions(bestAlphabet, i, j);
 
     // Decrypt the text using the new alphabet and calculate its quadgram score
-    const newText = processText(cleanedCipherText, ALPHABET, newAlphabet);
+    const newText = processText(cleanedCipherText, newAlphabet, ALPHABET);
     const newScore = quadgramScore(newText);
 
     // If the new quadgram score is better, update the best alphabet, text, and score
@@ -162,5 +162,5 @@ export const crack = (cipherText: string) => {
   }
 
   // Decipher the original cipher text using the best alphabet found
-  return processText(cipherText, ALPHABET, bestAlphabet)
+  return processText(cipherText, bestAlphabet, ALPHABET)
 };

@@ -52,7 +52,6 @@ describe("Simple Substitution Cipher", () => {
     const cipherText = encipher(SAMPLE_TEXT, key);
     const processedText = SAMPLE_TEXT.toLowerCase().replace(/[^a-z]/g, '')
     const cracked = crack(cipherText);
-    console.log(cracked)
     expect(cracked.length).toBe(processedText.length)
     expect(cracked).toBe(
       processedText
